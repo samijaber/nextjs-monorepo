@@ -22,14 +22,8 @@
   "files": [
     "dist"
   ],
-  "main": {
-    "types": "./dist/es/index.d.mts",
-    "default": "./dist/es/index.mjs"
-  },
-  "module": {
-    "types": "./dist/es/index.d.mts",
-    "default": "./dist/es/index.mjs"
-  },
+  "main": "./dist/es/index.mjs",
+  "module": "./dist/es/index.mjs",
   "exports": {
     ".": {
       "import": {
@@ -39,16 +33,6 @@
       "require": {
         "types": "./dist/cjs/index.d.cts",
         "default": "./dist/cjs/index.cjs"
-      }
-    },
-    "./safeDynamicRequire": {
-      "import": {
-        "types": "./dist/es/safeDynamicRequire.d.mts",
-        "default": "./dist/es/safeDynamicRequire.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/safeDynamicRequire.d.cts",
-        "default": "./dist/cjs/safeDynamicRequire.cjs"
       }
     }
   }
