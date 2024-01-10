@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strict": true,
+    "moduleResolution": "Bundler",
+    "jsx": "react",
+    "module": "ESNext",
+    "emitDeclarationOnly": true
+  },
+  "include": ["./src/**/*", "module-augmentations.d.ts"]
+}
