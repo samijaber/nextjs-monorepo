@@ -1,4 +1,4 @@
-import { Add } from "../lib/Add";
+import { Add } from "../comp/Add";
 import styles from "./page.module.css";
 
 export default function Home() {
