@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:lib": "pnpm --filter \"@mono/lib\" build",
+    "build": "pnpm run build:lib && next build",
     "start": "next start",
     "lint": "next lint"
   },
