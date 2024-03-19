@@ -1,3 +1,4 @@
 packages:
   - "nextjs-app"
+  - "nextjs-pages"
   - "lib"

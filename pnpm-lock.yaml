@@ -74,6 +74,46 @@ importers:
         specifier: ^5
         version: 5.3.3
 
+  nextjs-pages:
+    dependencies:
+      '@mono/lib':
+        specifier: workspace:*
+        version: link:../lib
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      lodash.add:
+        specifier: ^3.7.0
+        version: 3.7.0
+      next:
+        specifier: 14.1.3
+        version: 14.1.3(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@types/node':
+        specifier: ^20
+        version: 20.10.8
+      '@types/react':
+        specifier: ^18
+        version: 18.2.47
+      '@types/react-dom':
+        specifier: ^18
+        version: 18.2.18
+      eslint:
+        specifier: ^8
+        version: 8.56.0
+      eslint-config-next:
+        specifier: 14.0.4
+        version: 14.0.4(eslint@8.56.0)(typescript@5.3.3)
+      typescript:
+        specifier: ^5
+        version: 5.3.3
+
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:
