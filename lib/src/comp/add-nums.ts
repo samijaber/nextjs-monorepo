@@ -16,8 +16,6 @@ const getAdd = () => {
     : safeDynamicRequire("lodash/add");
 };
 
-// getServerVm that uses safeDynamicRequire("isolated-vm") to load the isolated-vm package
-
 const getServerVm = () => {
   const ivm = safeDynamicRequire("isolated-vm") as typeof import("isolated-vm");
 
