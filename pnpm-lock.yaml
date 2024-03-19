@@ -11,6 +11,12 @@ importers:
       isolated-vm:
         specifier: ^4.6.0
         version: 4.6.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
     devDependencies:
       '@arethetypeswrong/cli':
         specifier: ^0.13.3
@@ -30,6 +36,9 @@ importers:
 
   nextjs-app:
     dependencies:
+      '@mono/lib':
+        specifier: workspace:*
+        version: link:../lib
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
