@@ -1,3 +1,3 @@
 "use client";
 
-export { Add } from "./comp/Add";
+export { Comp } from "./comp/Comp";
