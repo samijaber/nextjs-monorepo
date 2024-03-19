@@ -3,7 +3,7 @@
 let safeDynamicRequire: any = () => {};
 try {
   safeDynamicRequire = eval("require");
-  console.log("Loaded dynamic require");
+  console.log("Loaded dynamic require", safeDynamicRequire);
 } catch (e) {
   console.error("Failed to load dynamic require: ", e);
 }
@@ -32,7 +32,7 @@ const getServerVm = () => {
 
   // And let's test it out:
   const result = context.evalSync("1+3");
-  console.log("1 + 3 = ", result);
+  // console.log("1 + 3 = ", result);
   return result;
 };
 
@@ -46,7 +46,7 @@ export const getEvalResult = () => {
 export const addNums = () => {
   const add = getAdd();
   const newLocal = add(1, 2);
-  console.log("Loaded lodash/add: ", add);
-  console.log("1 + 2 = ", newLocal);
+  // console.log("Loaded lodash/add: ", add);
+  // console.log("1 + 2 = ", newLocal);
   return newLocal;
 };
