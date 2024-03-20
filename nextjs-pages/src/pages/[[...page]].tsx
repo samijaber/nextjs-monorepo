@@ -1,4 +1,4 @@
-import { Comp } from "@mono/lib";
+import { Comp } from "../lib-src";
 
 // do not prerender
 export const getServerSideProps = async () => {
@@ -8,9 +8,5 @@ export const getServerSideProps = async () => {
 };
 
 export default function Home() {
-  if (typeof window === undefined) {
-    const ivm = globalThis.require("isolated-vm");
-  }
-
   return <main>code from lib: {<Comp />}</main>;
 }
