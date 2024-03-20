@@ -8,7 +8,8 @@ const getIvm = (): typeof import("isolated-vm") => {
     try {
       return globalThis.require("isolated-vm");
     } catch (error) {
-      return require("isolated-vm");
+      throw error;
+      // return require("isolated-vm");
     }
   }
 };
