@@ -1,7 +1,4 @@
 import { Comp } from "@mono/lib";
-import ivm from "isolated-vm";
-const isolate = new ivm.Isolate({ memoryLimit: 128 });
-const context = isolate.createContextSync();
 
 // do not prerender
 export const getServerSideProps = async () => {
@@ -11,5 +8,9 @@ export const getServerSideProps = async () => {
 };
 
 export default function Home() {
+  if (typeof window === undefined) {
+    const ivm = globalThis.require("isolated-vm");
+  }
+
   return <main>code from lib: {<Comp />}</main>;
 }
