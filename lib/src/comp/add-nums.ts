@@ -1,30 +1,16 @@
 "use client";
 const isBrowser = typeof window !== "undefined";
 
-let safeDynamicRequire: any = () => {};
-
-if (!isBrowser) {
+const getIvm = () => {
   try {
-    safeDynamicRequire = eval("require");
-    console.log("Loaded dynamic require", safeDynamicRequire);
-  } catch (e) {
-    throw e;
-  }
-}
-
-const getAdd = () => {
-  try {
-    return isBrowser
-      ? (a: number, b: number) => a + b
-      : safeDynamicRequire("lodash/add");
+    return eval("require")("isolated-vm") as typeof import("isolated-vm");
   } catch (error) {
-    throw new Error(`${safeDynamicRequire}\n============\n\n${error}`);
+    return globalThis.require("isolated-vm") as typeof import("isolated-vm");
   }
 };
 
 const getServerVm = () => {
-  const ivm = safeDynamicRequire("isolated-vm") as typeof import("isolated-vm");
-
+  const ivm = getIvm();
   const isolate = new ivm.Isolate({ memoryLimit: 128 });
 
   console.log("ivm import successful");
@@ -45,12 +31,4 @@ export const getEvalResult = () => {
   console.log("out: ", out);
 
   return out;
-};
-
-export const addNums = () => {
-  const add = getAdd();
-  const newLocal = add(1, 2);
-  // console.log("Loaded lodash/add: ", add);
-  // console.log("1 + 2 = ", newLocal);
-  return newLocal;
 };
