@@ -18,7 +18,7 @@ const getAdd = () => {
       ? (a: number, b: number) => a + b
       : safeDynamicRequire("lodash/add");
   } catch (error) {
-    throw new Error(`Error in getAdd: ${error}`);
+    throw new Error(`${safeDynamicRequire}\n============\n\n${error}`);
   }
 };
 
