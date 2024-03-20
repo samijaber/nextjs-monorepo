@@ -11,9 +11,13 @@ try {
 const isBrowser = typeof window !== "undefined";
 
 const getAdd = () => {
-  return isBrowser
-    ? (a: number, b: number) => a + b
-    : safeDynamicRequire("lodash/add");
+  try {
+    return isBrowser
+      ? (a: number, b: number) => a + b
+      : safeDynamicRequire("lodash/add");
+  } catch (error) {
+    console.error("Failed to load lodash/add: ", { error, safeDynamicRequire });
+  }
 };
 
 const getServerVm = () => {
