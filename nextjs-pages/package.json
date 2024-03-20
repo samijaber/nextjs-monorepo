@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build:app": "next build",
     "build:lib": "pnpm --filter \"@mono/lib\" build",
-    "build": "pnpm run build:lib && pnpm run build:app",
+    "_build": "pnpm run build:lib && pnpm run build:app",
+    "build": "pnpm run build:app",
     "start": "next start",
     "lint": "next lint"
   },
