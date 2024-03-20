@@ -1,14 +1,16 @@
 "use client";
+const isBrowser = typeof window !== "undefined";
 
 let safeDynamicRequire: any = () => {};
-try {
-  safeDynamicRequire = eval("require");
-  console.log("Loaded dynamic require", safeDynamicRequire);
-} catch (e) {
-  console.error("Failed to load dynamic require: ", e);
-}
 
-const isBrowser = typeof window !== "undefined";
+if (!isBrowser) {
+  try {
+    safeDynamicRequire = eval("require");
+    console.log("Loaded dynamic require", safeDynamicRequire);
+  } catch (e) {
+    throw e;
+  }
+}
 
 const getAdd = () => {
   try {
@@ -16,7 +18,7 @@ const getAdd = () => {
       ? (a: number, b: number) => a + b
       : safeDynamicRequire("lodash/add");
   } catch (error) {
-    console.error("Failed to load lodash/add: ", { error, safeDynamicRequire });
+    throw new Error(`Error in getAdd: ${error}`);
   }
 };
 
