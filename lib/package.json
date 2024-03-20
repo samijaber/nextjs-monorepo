@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "isolated-vm": "^4.6.0",
+    "lodash": "^4.17.21",
+    "lodash.add": "^3.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
