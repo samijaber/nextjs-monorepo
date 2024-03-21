@@ -2,11 +2,6 @@ const getIvm = (): typeof import("isolated-vm") => {
   try {
     return eval("require")("isolated-vm");
   } catch (error) {
-    if (typeof globalThis?.require === "function") {
-      return globalThis?.require?.("isolated-vm");
-    } else {
-      // require("isolated-vm");
-    }
     throw error;
   }
 };
