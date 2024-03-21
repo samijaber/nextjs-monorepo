@@ -1,4 +1,4 @@
-import { Comp } from "../lib-src";
+import { Comp } from "@mono/lib";
 
 // do not prerender
 export const getServerSideProps = async () => {
