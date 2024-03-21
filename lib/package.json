@@ -4,7 +4,7 @@
   "version": "0.0.7",
   "type": "module",
   "scripts": {
-    "build": "bunchee",
+    "build": "bunchee --runtime=node",
     "pkg:attw": "attw --pack .",
     "pkg:publint": "publint --strict",
     "lint-pkg": "pnpm pkg:publint && pnpm pkg:attw"
@@ -18,15 +18,22 @@
   },
   "dependencies": {
     "isolated-vm": "^4.6.0",
+    "lodash": "^4.17.21",
+    "lodash.add": "^3.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "init"
   ],
   "main": "./dist/es/index.mjs",
   "module": "./dist/es/index.mjs",
   "exports": {
+    "./init": {
+      "import": "./init/index.mjs",
+      "require": "./init/index.cjs"
+    },
     ".": {
       "import": {
         "types": "./dist/es/index.d.mts",

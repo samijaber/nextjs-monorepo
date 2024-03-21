@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  // transpilePackages: ["isolated-vm"],
+  // experimental: {
+  //   serverComponentsExternalPackages: ["isolated-vm"],
+  // },
+};
 
 module.exports = nextConfig;
