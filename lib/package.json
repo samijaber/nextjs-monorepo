@@ -24,11 +24,16 @@
     "react-dom": "^18.2.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "init"
   ],
   "main": "./dist/es/index.mjs",
   "module": "./dist/es/index.mjs",
   "exports": {
+    "./init": {
+      "import": "./init/index.mjs",
+      "require": "./init/index.cjs"
+    },
     ".": {
       "import": {
         "types": "./dist/es/index.d.mts",
