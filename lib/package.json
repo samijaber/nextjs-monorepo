@@ -1,14 +1,14 @@
 {
   "name": "@samijaber/isolated-vm-test",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "build": "bunchee --runtime=node",
     "pkg:attw": "attw --pack .",
     "pkg:publint": "publint --strict",
     "lint-pkg": "pnpm pkg:publint && pnpm pkg:attw",
-    "pub": "pnpm publish --tag next --access public",
-    "release": "pnpm build && pnpm publish"
+    "pub": "pnpm publish --tag next --access public --no-git-checks",
+    "release": "pnpm build && pnpm version patch && pnpm pub"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.13.3",
