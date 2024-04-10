@@ -1,13 +1,14 @@
 {
-  "name": "@mono/lib",
-  "description": "React utility for descriptive hydration mismatch errors.",
-  "version": "0.0.7",
+  "name": "@samijaber/isolated-vm-test",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "build": "bunchee --runtime=node",
     "pkg:attw": "attw --pack .",
     "pkg:publint": "publint --strict",
-    "lint-pkg": "pnpm pkg:publint && pnpm pkg:attw"
+    "lint-pkg": "pnpm pkg:publint && pnpm pkg:attw",
+    "publish": "pnpm publish --tag next",
+    "release": "pnpm build && pnpm publish"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.13.3",
@@ -17,11 +18,10 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "isolated-vm": "^4.6.0",
-    "lodash": "^4.17.21",
-    "lodash.add": "^3.7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "isolated-vm": "^4.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=16"
   },
   "files": [
     "dist",

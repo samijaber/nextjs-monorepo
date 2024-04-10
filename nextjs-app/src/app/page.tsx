@@ -1,6 +1,6 @@
 import { Add } from "../comp/Add";
 import styles from "./page.module.css";
-import { Comp } from "@mono/lib";
+import { Comp } from "@samijaber/isolated-vm-test";
 
 export default function Home() {
   return (

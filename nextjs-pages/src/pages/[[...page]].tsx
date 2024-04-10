@@ -1,4 +1,4 @@
-import { Comp } from "@mono/lib";
+import { Comp } from "@samijaber/isolated-vm-test";
 
 // do not prerender
 export const getServerSideProps = async () => {

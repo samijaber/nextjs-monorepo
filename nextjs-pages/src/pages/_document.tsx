@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
-import "@mono/lib/init";
+import "@samijaber/isolated-vm-test/init";
 
 export default function Document() {
   return (
